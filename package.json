@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@singlestore/client": "^0.0.41"
+  }
+}

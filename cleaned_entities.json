@@ -1,0 +1,34 @@
+[
+    {
+        "label": "CONDITION",
+        "value": "unconscious"
+    },
+    {
+        "label": "LOCATION_ADDRESS",
+        "value": "1247 Oak Street, Apartment 4 C"
+    },
+    {
+        "label": "NAME",
+        "value": "Andrew Smith"
+    },
+    {
+        "label": "CONDITION",
+        "value": "heart condition"
+    },
+    {
+        "label": "CONDITION",
+        "value": "atrial fibrillation"
+    },
+    {
+        "label": "DRUG",
+        "value": "blood thinners"
+    },
+    {
+        "label": "AGE",
+        "value": "56"
+    },
+    {
+        "label": "PHYSICAL_ATTRIBUTE",
+        "value": "Caucasian"
+    }
+]
