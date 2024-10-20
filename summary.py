@@ -7,11 +7,15 @@ import json
 with open('api_result.json', 'r') as file:
     data = json.load(file)
 
+for i in range(10):
+    print(i)
+    print(data[i])
+
 print(data)
 
 # Extract the transcript
-transcript = data
-# transcript = data["results"]["channels"][0]["alternatives"][0]["transcript"]
+# transcript = data
+transcript = data["results"]["channels"][0]["alternatives"][0]["transcript"]
 
 # Print the transcript
 print(transcript)

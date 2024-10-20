@@ -1,8 +1,13 @@
+import subprocess
+
 import singlestoredb as s2
 import json
 
-# Path to your JSON file
-json_file_path = 'cleaned_entities.json'
+# Call another Python script
+subprocess.run(["python", "transcribe.py"])
+
+# Path to your uploaded JSON file
+json_file_path = 'api_result.json'
 
 # Create a connection to the database
 try:
@@ -22,11 +27,14 @@ def upload_data_to_singlestore(conn, data):
                 print("All prior data deleted.")
 
                 # Step 2: Insert new data
-                for record in data:
-                    label = record.get('label')
-                    value = record.get('value')
-                    insert_query = "INSERT INTO entities (label, value) VALUES (%s, %s)"
-                    cur.execute(insert_query, (label, value))
+                location = data.get('location')
+                name = data.get('name')
+                summary = data.get('summary')
+                actions = data.get('actions') 
+                
+                insert_query = "INSERT INTO entities (location, name, summary, actions) VALUES (%s, %s, %s, %s)"
+
+                cur.execute(insert_query, (location, name, summary, actions))
 
                 # Commit the transaction
                 conn.commit()
